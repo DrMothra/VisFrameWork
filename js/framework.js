@@ -3,9 +3,6 @@
  */
 //Visualisation framework
 
-
-
-
 //Init this app from base
 function Framework() {
     BaseApp.call(this);
@@ -24,16 +21,11 @@ Framework.prototype.createScene = function() {
     //Create scene
     BaseApp.prototype.createScene.call(this);
 
-    //Load floor grid
-    var width = 420;
-    var height = 640;
-    var gridGeom = new THREE.PlaneGeometry(width, height);
-    var texture = THREE.ImageUtils.loadTexture("images/grid.png");
-    var gridMaterial = new THREE.MeshLambertMaterial({ map : texture, transparent: true, opacity: 0.9});
-    var grid = new THREE.Mesh(gridGeom, gridMaterial);
-    grid.name = 'grid';
-    grid.rotation.x = -Math.PI/2;
-    this.scene.add(grid);
+    //Load example object
+    var boxGeom = new THREE.BoxGeometry(10, 10, 10);
+    var mat = new THREE.MeshLambertMaterial({color: 0xb5b5b5, transparent: false, opacity: 0.5});
+    var box = new THREE.Mesh(boxGeom, mat);
+    this.scene.add(box);
 };
 
 Framework.prototype.createGUI = function() {
