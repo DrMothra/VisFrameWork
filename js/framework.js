@@ -23,7 +23,7 @@ Framework.prototype.createScene = function() {
 
     //Load example object
     var boxGeom = new THREE.BoxGeometry(10, 10, 10);
-    var mat = new THREE.MeshLambertMaterial({color: 0xb5b5b5, transparent: false, opacity: 0.5});
+    var mat = new THREE.MeshPhongMaterial({color: 0xb5b5b5, transparent: false, opacity: 0.5});
     var box = new THREE.Mesh(boxGeom, mat);
     this.scene.add(box);
 };
